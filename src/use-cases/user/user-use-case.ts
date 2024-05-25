@@ -19,9 +19,9 @@ export class CreateClientUseCase {
 
     constructor(private clientsRepository: any) { }
 
-    async execute({ name, type, document, birthDate, address }: CreateClientUseCaseRequest): Promise<any> {
+    async execute({ type, document, birthDate, address }: CreateClientUseCaseRequest): Promise<any> {
 
-        const client = await this.clientsRepository.create({ name, type, document, birthDate, address })
+        const client = await this.clientsRepository.create({ type, document, birthDate, address })
 
         return {
             client
